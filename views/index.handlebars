@@ -1,0 +1,96 @@
+<div class='jumbotron'>
+    <div class='container'>
+        <h1><img class="logo" src="/assets/images/bball-logo.png" alt="Baseball Logo"> Fantasy Baseball Draft Tracker </h1>
+        <p>A simple fantasy baseball tool that allows you to keep track of players drafted to your fantasy baseball team</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-2 player-lists">
+        <h2>Players to be drafted</h2>
+        <ul>
+          {{#each players}}
+            {{#unless drafted}}
+              {{> player-block drafted=false}}
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-4 player-lists">
+        <h2>Your team</h2>
+        <ul>
+            {{#each players}}
+              {{#if drafted}}
+                {{> player-block drafted=true}}
+              {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 add-player">
+        <h2>Add A Player</h2>
+        <form class="create-form form-horizontal">
+            <div class="form-group">
+                <label for="fName">First Name: </label>
+                <input type="text" id="fName">
+            </div>
+            <div class="form-group">
+                <label for="lName">Last Name: </label>
+                <input type="text" id="lName">
+            </div>
+            <div class="form-group">
+                <label for="position">Position: </label>
+                <select id="position">
+                    <option value="">Posiiton</option>
+                    <option value="P">Pitcher</option>
+                    <option value="C">Catcher</option>                    
+                    <option value="1B">First Baseman</option>
+                    <option value="2B">Second Baseman</option>
+                    <option value="3B">Third Baseman</option>
+                    <option value="SS">Shortstop</option>
+                    <option value="OF">Outfield</option>
+                </select>                
+            </div>
+            <div class="form-group">
+                <label for="team">Team: </label>
+                <select id="team">
+                    <option value="">Team</option>
+                    <option value="ARI">Arizona Diamondbacks</option>
+                    <option value="ATL">Atlanta Braves</option>
+                    <option value="BAL">Baltimore Orioles</option>
+                    <option value="BOS">Boston Red Sox</option>
+                    <option value="CHC">Chicago Cubs</option>
+                    <option value="CWS">Chicago White Sox</option>
+                    <option value="CIN">Cincinnati Reds</option>
+                    <option value="CLE">Cleveland Indians</option>
+                    <option value="COL">Colorado Rockies</option>
+                    <option value="DET">Detroit Tigers</option>
+                    <option value="HOU">Houston Astros</option>
+                    <option value="KAN">Kansas City Royals</option>
+                    <option value="LAA">Los Angeles Angels</option>
+                    <option value="LAD">Los Angeles Dodgers</option>
+                    <option value="MIA">Miami Marlins</option>
+                    <option value="MIL">Milwaukee Brewers</option>
+                    <option value="MIN">Minnesota Twins</option>
+                    <option value="NYM">New York Mets</option>
+                    <option value="NYY">New York Yankees</option>
+                    <option value="OAK">Oakland Athletics</option>
+                    <option value="PHI">Philadelphia Phillies</option>
+                    <option value="PIT">Pittsburgh Pirates</option>
+                    <option value="SD">San Diego Padres</option>
+                    <option value="SF">San Francisco Giants</option>
+                    <option value="SEA">Seattle Mariners</option>
+                    <option value="STL">St. Louis Cardinals</option>
+                    <option value="TB">Tampa Bay Rays</option>
+                    <option value="TEX">Texas Rangers</option>
+                    <option value="TOR">Toronto Blue Jays</option>
+                    <option value="WAS">Washington Nationals</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary submit-form">Submit</button>
+        </form>
+
+    </div>
+</div>

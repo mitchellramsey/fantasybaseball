@@ -1,0 +1,10 @@
+<li>
+    <p>{{id}}. {{lastName}}, {{firstName}} - {{position}} - {{team}}</p>
+    
+        <p><button class="btn btn-primary change-drafted" data-id="{{id}}" data-drafted="{{drafted}}">
+    {{#unless drafted}}Draft Player{{else}}Return player to draft board{{/unless}}
+        </button>
+    {{#unless drafted}}
+        <button class="btn btn-danger delete-player" data-id="{{id}}">Drafted by Another Team</button></p>
+    {{/unless}}
+</li>
